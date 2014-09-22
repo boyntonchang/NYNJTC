@@ -1,0 +1,67 @@
+<ion-view title={{trail.Title}} ng-controller='trail-DetailCtrl'>
+	<ion-content class='has-header mainBgColor'>
+		<div class='card padding cardBlue'>
+			{{trail.Overview}}
+		</div>
+		<div class='card padding cardBlue'>
+			<div class='row row-center'>
+				<div class='col col-50'>
+					<h2 class='col-h2'>TIME</h2>
+				</div>
+				<div class='col col-40 text-right '>
+					<h2 class='col-h2'>{{trail.TIME }}</h2>
+				</div>
+				<div class='col col-10'>
+					<span>H</span> 
+				</div>
+			</div>
+			
+		</div>
+		<div class='card padding cardBlue'>
+			<div class='row row-center'>
+				<div class='col col-50'>
+					<h2 class='col-h2'>LENGTH</h2>
+				</div>
+				<div class='col col-40 text-right '>
+					<h2 class='col-h2'>{{trailMile }}</h2>
+				</div>
+				<div class='col col-10'>
+					<span>M</span> 
+				</div>
+			</div>
+		</div>
+		<div class='card padding cardBlue'>
+			<div class='row row-center'>
+				<div class='col col-50'>
+					<h3 class='col-h3'>DIFFICULTY</h3>
+				</div>
+				<div class='col col-40 text-right '>
+					<h2 class='col-h2'>{{diffVal}}</h2>
+				</div>
+				<div class='col col-10'>
+					<span>/5</span> 
+				</div>
+			</div>
+		</div>
+		<div class='card padding cardBlue desc'>
+			{{trail.description}}
+		</div>
+		
+		
+	</ion-content>
+	<div class=' tabs tab-nynjtc tabs-icon-top'>
+		<a class='tab-item' >
+			<i class='icon ion-ios7-photos-outline'></i>
+			Photo
+		</a>
+		<a class='tab-item' >
+			<i class='icon ion-ios7-location-outline'></i>
+			Map
+		</a>
+		<a class='tab-item' >
+			<i class='icon ion-ios7-chatbubble-outline'></i>
+			Comments
+		</a>
+	</div>
+
+</ion-view>

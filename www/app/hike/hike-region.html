@@ -1,0 +1,12 @@
+<ion-view title='Choose Region' ng-controller='regionCtrl'>
+	<ion-content class='has-header mainBgColor'>
+		<div class='list text-white'>
+			<a class='item mainBgColor item-icon-right' ng-repeat = 'row in regions'  ng-click='getRegionList(row)' ng-href='#/app/region-trail'>
+				{{row}}
+				<i class='icon ion-chevron-right icon-accessory'></i>
+			</a>
+			
+		</div>
+
+	</ion-content>
+</ion-view>

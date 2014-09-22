@@ -1,0 +1,123 @@
+/* Empty. Add your own CSS if you like */
+.bar.bar-nynjtc, .tab-nynjtc{
+	background-color:#00b37c;
+	color:#fff;
+}
+
+.bar.bar-nynjtc h1, .button-clear.button-clear, .ion-navicon.button{
+	color:#fff;
+
+}
+
+.darkBlue{
+	background-color:#000a10;
+}
+
+.item-complex .item-content{
+
+	background-color:transparent;
+}
+
+ion-side-menu .list .item{
+	background-color:transparent;
+	color:#fff;
+	border-bottom-color:gray;
+}
+
+.whiteColorText{
+	color:white;
+	margin-bottom:0;
+	
+}
+
+.mainContainer{
+	background-image:url('../img/bgImage_main.png');
+	background-repeat:no-repeat;
+	height:100%;
+}
+
+.button-block.button-outline{
+	border:none;
+	margin-bottom:30px;
+	padding:15px;
+	background-color:rgba(5,9,26,0.6);
+}
+
+.button-block.button-outline.activated{
+	background-color:rgba(5,9,26,0.9);
+	
+}
+
+.menu-center{
+	padding-top:60px;
+	
+}
+
+.mainBgColor{
+
+	background-color:#1b2d3c;
+}
+
+.marginTop120{
+
+	margin-top:120px; 
+}
+.padding30{
+	padding-bottom:30px;
+	padding-top:30px;
+}
+
+
+
+.button-outline.btn-cat{
+	border:thin solid white;
+	margin-bottom:30px;
+	padding:15px;
+	padding-left:75px;
+	background-color:transparent;
+	text-align:left;
+}
+
+.text-white{
+
+	color:white;
+}
+
+.item{
+	border-color:#555;
+}
+
+.card{
+	border-radius:0;
+	
+}
+
+.cardBlue{
+	background-color:#076293;
+	color:#fff;
+	font-size:16px;
+	
+}
+
+.col-h2{
+	margin-bottom:0px;
+	line-height:0px;
+	color:#fff;
+	
+}
+
+.col-h3{
+	margin-bottom:0px;
+	line-height:0px;
+	color:#fff;
+	font-size:1.3em;
+}
+
+.desc{
+	font-size:14px;
+}
+
+ .pane, .view{
+	background-color:transparent;
+
+}

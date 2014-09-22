@@ -1,0 +1,40 @@
+<ion-side-menus>
+
+  <ion-pane ion-side-menu-content class='mainBGColor'>
+    <ion-nav-bar class=" bar-nynjtc">
+		<ion-nav-back-button class='button-clear button-icon icon ion-ios7-arrow-back'>Back</ion-nav-back-button>
+		<ion-nav-buttons side='right'>
+			<button menu-toggle='right' class='button button-icon icon ion-navicon'></button>
+		</ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="mainContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="right" >
+    <header class="bar bar-header bar-stable">
+      <h1 class="title">MENU</h1>
+    </header>
+    <ion-content class="has-header darkBlue">
+      <ion-list>
+        <ion-item nav-clear menu-close ui-sref='home'>
+          HOME
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref='app.hike>
+          FIND A HIKE
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref='app.trails>
+          MY TRAILS
+        </ion-item>
+		<ion-item nav-clear menu-close ui-sref='app.nynjtc'>
+          NYNJTC
+        </ion-item>
+        <ion-item nav-clear menu-close ui-sref='app.settings'>
+          SETTINGS
+        </ion-item>
+		<ion-item nav-clear menu-close ui-sref='app.login'>
+          LOGIN
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
