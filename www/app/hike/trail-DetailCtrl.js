@@ -30,7 +30,7 @@ angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateP
 			case 'Moderate to Strenuous':
 				 $scope.diffVal = 3.5;
 				break;
-			case 'strenuous':
+			case 'Strenuous':
 				 $scope.diffVal = 4;
 				break;
 			case 'Very Strenuous':

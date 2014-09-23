@@ -1,5 +1,18 @@
-<ion-view>
-	<ion-content class='has-header'>
-		<h1>title</h1>
+<ion-view title='Search By Title' ng-controller='hike-titleCtrl'>
+	<ion-content class='has-header mainBgColor'>
+		<div class='list list-inset'>
+			<label class='input item-input'>
+				<i class='icon ion-search placeholder-icon'></i>
+				<input type='text' placeholder='Type keyword' ng-model='search.Title'></input>
+			</label>
+		</div>
+		<div class='list text-white'>
+			<a class='item mainBgColor item-icon-right' ng-repeat = 'trail in trails | filter:search'  ui-sref='app.trail-Detail({id:trail.id})'>
+				{{trail.Title}}
+				<i class='icon ion-chevron-right icon-accessory'></i>
+			</a>
+			
+		</div>
+
 	</ion-content>
 </ion-view>

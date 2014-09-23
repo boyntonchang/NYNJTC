@@ -1,5 +1,21 @@
-<ion-view>
-	<ion-content class='has-header'>
-		<h1>difficulty</h1>
+<ion-view title='Search By Diff.' ng-controller='hike-DiffCtrl'>
+	<ion-content class='has-header mainBgColor'>
+		<div class='list list-inset'>
+			<span   class='item text-center'>{{diffString}} </span>
+			<label class='item range range-positive'>
+				Easy
+				<input type='range' name='volume' min='0' max='6'  ng-model='dataVol.volume'></input>
+				Tough
+			</label>
+			
+		</div>
+		<div class='list text-white'>
+			<a class='item mainBgColor item-icon-right' ng-repeat = 'trail in selectedTrails track by $index'  ui-sref='app.trail-Detail({id:trail.id})'>
+				{{trail.Title}}
+				<i class='icon ion-chevron-right icon-accessory'></i>
+			</a>
+			
+		</div>
+
 	</ion-content>
 </ion-view>
