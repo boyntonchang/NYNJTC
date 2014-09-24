@@ -4,16 +4,18 @@ angular.module('tcApp').controller('hike-DiffCtrl', function($scope, hikeData){
 
 	
 			$scope.trails = data;
-			$scope.diffString = 'Drag circle for search';
+			//$scope.diffString = 'Drag circle for search by difficulty';
 			
 			//$scope.data.volume = '';
 			$scope.dataVol = {'volume' : 0};
 			
+			//$scope.selectedTrails = $scope.trails;
 			
+			console.log($scope.selectedTrails);
 			$scope.$watch('dataVol.volume', function(){
 				
-				console.log($scope.dataVol.volume);
-				$scope.selectedTrails = [] ;
+				
+				$scope.selectedTrails = [];
 				switch($scope.dataVol.volume) {
 				
 					case '1':
@@ -35,7 +37,8 @@ angular.module('tcApp').controller('hike-DiffCtrl', function($scope, hikeData){
 						$scope.diffString ='Very Strenuous';
 						break;
 					default :
-						$scope.diffString ='Drag circle for search';
+						$scope.diffString ='Drag circle for search by difficulty';
+						
 						break;
 					
 					
@@ -49,10 +52,7 @@ angular.module('tcApp').controller('hike-DiffCtrl', function($scope, hikeData){
 				for(var i=0;i < curTrails.length; i++){
 					
 					var trail = $scope.trails[i];
-					console.log('Tdiff_str',trail.Difficulty);
-					console.log('diffS_str',diffString);
-					console.log('Tdiff',trail.Difficulty.length);
-					console.log('diffS',diffString.length);
+					
 
 					if(trail.Difficulty.indexOf(diffString) !== -1 && trail.Difficulty.length === diffString.length){
 						

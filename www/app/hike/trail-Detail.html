@@ -1,15 +1,39 @@
-<ion-view title={{trail.Title}} ng-controller='trail-DetailCtrl'>
+<ion-view title=Trail ng-controller='trail-DetailCtrl'>
 	<ion-content class='has-header mainBgColor'>
-		<div class='card padding cardBlue'>
+		<div class='card'>
+			
+				<div class='item item-text-wrap item-divider positive contentFont'>
+					{{trail.Title}}
+				</div>
+				<div class='item'>
+					
+							<div class='item-checkbox'>
+								<h3>{{visited ? "walked" : "Not Walked"}}</h3>
+								<label class='checkbox'>
+									<input type='checkbox' ng-model='visited'></input>
+								</label>
+							</div>
+
+							<!-- <div class='item'>
+								<input type='date'></input>
+							</div> -->
+
+					</div>
+				
+				</div>
+					
+			
+		</div>
+		<div class='card padding cardBlue contentFont'>
 			{{trail.Overview}}
 		</div>
 		<div class='card padding cardBlue'>
 			<div class='row row-center'>
 				<div class='col col-50'>
-					<h2 class='col-h2'>TIME</h2>
+					<h2 class='col-h2 whiteColorText'>TIME</h2>
 				</div>
 				<div class='col col-40 text-right '>
-					<h2 class='col-h2'>{{trail.TIME }}</h2>
+					<h2 class='col-h2 '>{{trail.TIME }}</h2>
 				</div>
 				<div class='col col-10'>
 					<span>H</span> 
@@ -20,7 +44,7 @@
 		<div class='card padding cardBlue'>
 			<div class='row row-center'>
 				<div class='col col-50'>
-					<h2 class='col-h2'>LENGTH</h2>
+					<h2 class='col-h2 whiteColorText'>LENGTH</h2>
 				</div>
 				<div class='col col-40 text-right '>
 					<h2 class='col-h2'>{{trailMile }}</h2>
@@ -33,7 +57,7 @@
 		<div class='card padding cardBlue'>
 			<div class='row row-center'>
 				<div class='col col-50'>
-					<h3 class='col-h3'>DIFFICULTY</h3>
+					<h3 class='col-h3 whiteColorText'>DIFFICULTY</h3>
 				</div>
 				<div class='col col-40 text-right '>
 					<h2 class='col-h2'>{{diffVal}}</h2>
@@ -43,7 +67,7 @@
 				</div>
 			</div>
 		</div>
-		<div class='card padding cardBlue desc'>
+		<div class='card padding cardBlue desc contentFont'>
 			{{trail.description}}
 		</div>
 		

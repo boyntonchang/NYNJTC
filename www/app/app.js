@@ -88,6 +88,15 @@ angular.module('tcApp', ['ionic'])
 			
 			}
 		})
+			.state('app.park-trail', {
+			url:'/park-trail',
+			views:{
+			'mainContent':{
+				templateUrl:'app/hike/park-trail.html'
+				}
+			
+			}
+		})
 	
 		.state('app.trails', {
 			url:'/trails',

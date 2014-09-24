@@ -1,0 +1,12 @@
+<ion-view title='Park | {{parkObj}}' ng-controller='park-trailCtrl'>
+	<ion-content class='has-header mainBgColor'>
+	
+		<div class='list text-white'>
+			
+			<a class='item mainBgColor ' ng-repeat = 'trail in selectedTrails '  ui-sref='app.trail-Detail({id:trail.id})'>
+				{{trail.Title}}  
+			</a>
+			
+		</div>
+	</ion-content>
+</ion-view>

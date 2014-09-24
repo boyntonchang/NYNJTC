@@ -27,9 +27,13 @@ ion-side-menu .list .item{
 .whiteColorText{
 	color:white;
 	margin-bottom:0;
-	
+	font-family: 'Raleway', sans-serif;
 }
 
+.marginTop-0{
+
+	margin-top:0px;
+}
 .mainContainer{
 	background-image:url('../img/bgImage_main.png');
 	background-repeat:no-repeat;
@@ -81,6 +85,12 @@ ion-side-menu .list .item{
 .text-white{
 
 	color:white;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contentFont{
+
+	font-family: 'Open Sans', sans-serif;
 }
 
 .item{
@@ -120,4 +130,16 @@ ion-side-menu .list .item{
  .pane, .view{
 	background-color:transparent;
 
+}
+
+.logoPlacement{
+
+	background-image:url('../img/logo.png');
+	background-repeat:no-repeat;
+	width:100px;
+	height:100px;
+	left:35%;
+	top:70%;
+	position:absolute;
+	
 }

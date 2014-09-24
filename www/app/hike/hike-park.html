@@ -1,5 +1,12 @@
-<ion-view>
-	<ion-content class='has-header'>
-		<h1>park</h1>
+<ion-view title='Choose Park' ng-controller='hike-parkCtrl'>
+	<ion-content class='has-header mainBgColor'>
+		<div class='list text-white'>
+			<a class='item mainBgColor item-icon-right' ng-repeat = 'row in parks'  ng-click='getParkList(row)' ng-href='#/app/park-trail'>
+				{{row}}
+				<i class='icon ion-chevron-right icon-accessory'></i>
+			</a>
+			
+		</div>
+
 	</ion-content>
 </ion-view>

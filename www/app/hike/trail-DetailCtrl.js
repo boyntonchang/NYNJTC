@@ -42,6 +42,8 @@ angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateP
 		};
 		
 		return $scope.diffVal ;
+		
+		
 
 		
 	});

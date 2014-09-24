@@ -10,7 +10,7 @@
 			
 		</div>
 		<div class='list text-white'>
-			<a class='item mainBgColor item-icon-right' ng-repeat = 'trail in selectedTrails track by $index'  ui-sref='app.trail-Detail({id:trail.id})'>
+			<a class='item mainBgColor item-icon-right' ng-repeat = 'trail in selectedTrails'  ui-sref='app.trail-Detail({id:trail.id})'>
 				{{trail.Title}}
 				<i class='icon ion-chevron-right icon-accessory'></i>
 			</a>
