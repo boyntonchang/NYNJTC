@@ -1,4 +1,9 @@
 /* Empty. Add your own CSS if you like */
+body {
+	cursor:url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+
 .bar.bar-nynjtc, .tab-nynjtc{
 	background-color:#00b37c;
 	color:#fff;
@@ -18,10 +23,20 @@
 	background-color:transparent;
 }
 
-ion-side-menu .list .item{
+ion-side-menu .list .item, .contact{
 	background-color:transparent;
 	color:#fff;
 	border-bottom-color:gray;
+}
+a.contact{
+	color:#fff;
+	font-size:18px;
+	border:solid thin white;
+	white-space:normal;
+}
+
+i.ion-android-mail{
+	color:#fff;
 }
 
 .whiteColorText{
@@ -51,6 +66,8 @@ ion-side-menu .list .item{
 	background-color:rgba(5,9,26,0.9);
 	
 }
+
+
 
 .menu-center{
 	padding-top:60px;
@@ -125,6 +142,14 @@ ion-side-menu .list .item{
 
 .desc{
 	font-size:14px;
+	margin-bottom:80px;
+}
+
+.desc2{
+	font-size:18px;
+	/* margin-bottom:80px; */
+	
+	margin:10px 0;
 }
 
  .pane, .view{
@@ -142,4 +167,57 @@ ion-side-menu .list .item{
 	top:70%;
 	position:absolute;
 	
+}
+
+
+/*---------------------google map----------*/
+
+
+.angular-google-map-container{
+	display:block;
+	width:100%;
+	height:100%;
+}
+
+.angular-google-map{
+	display:block;
+	width:100%;
+	height:640px;
+}
+
+.marker-labels{
+	color:#fff;
+	background-color:#076293;
+	font-size:14px;
+	padding:5px;
+}
+
+/*-------nynjtc-------------------*/
+
+
+.harriman{
+	background-image:url('../img/harriman.png');
+	background-repeat:no-repeat;
+	height:150px;
+	width:100%;
+	/* margin:0 10px; */
+}
+.volunteer{
+	background-image:url('../img/volunteer.png');
+	background-repeat:no-repeat;
+	height:150px;
+	/* margin:0 10px; */
+}
+.button-bar .button{
+
+	min-height:32px;
+	line-height:32px;
+}
+
+.button-outline.button-outline.active, .button-outline.button-outline.activated{
+	background-color:white;
+	color:#076293;
+}
+.padding-left{
+	padding-left:10px;
 }

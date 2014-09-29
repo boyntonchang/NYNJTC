@@ -1,4 +1,4 @@
-angular.module('tcApp', ['ionic'])
+angular.module('tcApp', ['ionic', 'google-maps'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -106,11 +106,30 @@ angular.module('tcApp', ['ionic'])
 				}
 			
 			}
-		}).state('app.nynjtc', {
+		})
+		.state('app.nynjtc', {
 			url:'/nynjtc',
 			views:{
 			'mainContent':{
 				templateUrl:'app/nynjtc/nynjtc.html'
+				}
+			
+			}
+		})
+		.state('app.location-map', {
+			url:'/location-map/:id',
+			views:{
+			'mainContent':{
+				templateUrl:'app/locations/location-map.html'
+				}
+			
+			}
+		})
+		.state('app.location-office', {
+			url:'/location-office',
+			views:{
+			'mainContent':{
+				templateUrl:'app/locations/location-office.html'
 				}
 			
 			}

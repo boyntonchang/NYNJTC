@@ -1,5 +1,67 @@
-<ion-view>
-	<ion-content class='has-header'>
-		<h1>NYNJTC</h1>
+<ion-view title="NYNJTC" ng-controller='nynjtcCtrl'>
+	<ion-content class='has-header mainBgColor'>
+	<div class='bar-subheader'>
+		<div class="button-bar padding">
+			  <a class="button  button-outline {{(type == '
+			  About') &&  'active' || ' '}}" ng-click="setType($event)">About</a>
+			  <a class="button button-outline  {{(type == '
+			  Mission') &&  'active' || ' '}}" ng-click="setType($event)">Mission</a>
+			  <a class="button button-outline  {{(type == '
+			  Contact') &&  'active' || ' '}}" ng-click="setType($event)">Contact</a>
+		</div>
+		
+	</div>		
+		
+		<div ng-show="type=='About'" class='padding'>
+			<div class='harriman margin'></div>
+			<div class=' text-white desc2 padding'>
+				<p>{{About}}</p>
+			</div>
+		</div>
+		<div ng-show="type=='Mission'" class='padding'>
+			<div class='volunteer'></div>
+			<div class='padding text-white desc2'>
+				<p>{{mission}}</p>
+				<ui class=''>
+					<li>Developing, building, and maintaining hiking trails</li>
+					<li>Protecting hiking trail lands through support and advocacy</li>
+					<li>Educating the public in the responsible use of trails and the natural environment.</li>
+				</ui>
+			</div>
+		</div>
+		<div ng-show="type=='Contact'" class='padding'>
+
+				<div class='list '>
+						<a class='item item-icon-right contact' href='mailtto:office@nynjtc.org'>
+							General Questions
+							<i class='icon ion-android-mail'></i>
+						</a>
+						<a class='item item-icon-right contact' href='mailtto:webmaster@nynjtc.org'>
+							Web Problems
+							<i class='icon ion-android-mail'></i>
+						</a>
+						<a class='item item-icon-right contact' href='mailtto:tw@nynjtc.org'>
+							Trail Walker Submissions
+							<i class='icon ion-android-mail'></i>
+						</a>
+				</div>
+				<div class='list '>
+						<a class='item item-icon-right contact' href='tel:+1-201-512-9348'>
+							201.512.9348
+							<i class='icon ion-android-call'></i>
+						</a>
+						<a class='item item-icon-right contact wrap' ng-href='#/app/location-office'>
+							156 Ramapo Valley Road (Route 202)
+Mahwah, NJ 07430-1199
+							<i class='icon ion-android-location'></i>
+						</a>
+						
+				</div>
+				
+
+				<div class=' text-white desc2 padding'>
+					<p>Office hours are Monday through Friday (except holidays) between 9am and 5pm.</p>
+				</div>
+		</div>
 	</ion-content>
 </ion-view>

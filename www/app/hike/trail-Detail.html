@@ -1,4 +1,4 @@
-<ion-view title=Trail ng-controller='trail-DetailCtrl'>
+<ion-view title='Trail' ng-controller='trail-DetailCtrl'>
 	<ion-content class='has-header mainBgColor'>
 		<div class='card'>
 			
@@ -78,7 +78,7 @@
 			<i class='icon ion-ios7-photos-outline'></i>
 			Photo
 		</a>
-		<a class='tab-item' >
+		<a class='tab-item' ng-href='#/app/location-map/{{trail.id}}'>
 			<i class='icon ion-ios7-location-outline'></i>
 			Map
 		</a>
