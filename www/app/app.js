@@ -144,5 +144,5 @@ angular.module('tcApp', ['ionic', 'google-maps','ngResource'])
 		});
 
 		
-		$urlRouterProvider.otherwise('/app/region');
+		$urlRouterProvider.otherwise('/home');
 });
