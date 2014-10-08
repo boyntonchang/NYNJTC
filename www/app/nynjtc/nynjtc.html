@@ -2,12 +2,9 @@
 	<ion-content class='has-header mainBgColor'>
 	<div class='bar-subheader'>
 		<div class="button-bar padding">
-			  <a class="button  button-outline {{(type == '
-			  About') &&  'active' || ' '}}" ng-click="setType($event)">About</a>
-			  <a class="button button-outline  {{(type == '
-			  Mission') &&  'active' || ' '}}" ng-click="setType($event)">Mission</a>
-			  <a class="button button-outline  {{(type == '
-			  Contact') &&  'active' || ' '}}" ng-click="setType($event)">Contact</a>
+			  <a class="button  button-outline" ng-class="{ 'active': type == 'About' }" ng-click="setType($event)">About</a>
+			  <a class="button button-outline " ng-class="{ 'active': type == 'Mission' }" ng-click="setType($event)">Mission</a>
+			  <a class="button button-outline " ng-class="{ 'active': type == 'Contact' }" ng-click="setType($event)">Contact</a>
 		</div>
 		
 	</div>		
