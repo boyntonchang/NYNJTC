@@ -11,8 +11,8 @@
   </ion-pane>
 
   <ion-side-menu side="right" >
-    <header class="bar bar-header bar-stable">
-      <h1 class="title">MENU</h1>
+    <header class="bar bar-header bar-stable bar-nynjtc">
+      <h3>MENU</h3>
     </header>
     <ion-content class="has-header darkBlue">
       <ion-list class='whiteColorText'>
@@ -28,11 +28,11 @@
 		<ion-item nav-clear menu-close ui-sref='app.nynjtc'>
           NYNJTC
         </ion-item>
-        <ion-item nav-clear menu-close ui-sref='app.settings'>
-          SETTINGS
-        </ion-item>
-		<ion-item nav-clear menu-close ui-sref='app.login'>
+		<ion-item nav-clear menu-close ui-sref='login' ng-hide='auth'>
           LOGIN
+        </ion-item>
+		<ion-item nav-clear menu-close  ng-click='logout()' ng-show='auth'>
+          LOGOUT
         </ion-item>
       </ion-list>
     </ion-content>

@@ -1,5 +1,12 @@
-<ion-view>
-	<ion-content class='has-header'>
-		<h1>MY TRAILS</h1>
+<ion-view title="Trails" ng-controller='trailsCtrl'>
+	<ion-content class='has-header mainBgColor' >
+		<h3 class='underCont text-white'>UNDER CONTRUCTION</h3>
+		<div class='list text-white'>
+			
+			<a class='item mainBgColor ' ng-repeat = 'trail in visitedTrails '  ui-sref='app.trail-Detail({id:trail.id})'>
+				{{trail.Title}}  
+			</a>
+			
+		</div>
 	</ion-content>
 </ion-view>

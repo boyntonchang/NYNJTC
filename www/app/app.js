@@ -1,4 +1,4 @@
-angular.module('tcApp', ['ionic', 'google-maps'])
+angular.module('tcApp', ['ionic', 'google-maps','ngResource'])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -10,9 +10,16 @@ angular.module('tcApp', ['ionic', 'google-maps'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+	   $rootScope.$on('$stateChangeError', function(event, toState, toParams, 
+                                                 fromState, fromParams, error) {
+      $state.go(error);
+    });
   });
 })
-.config(function($stateProvider, $urlRouterProvider){
+
+.config(function($stateProvider, $urlRouterProvider, $httpProvider){
+
+	
 	$stateProvider
 	
 		.state('home', {
@@ -100,6 +107,7 @@ angular.module('tcApp', ['ionic', 'google-maps'])
 	
 		.state('app.trails', {
 			url:'/trails',
+			
 			views:{
 			'mainContent':{
 				templateUrl:'app/trails/trails.html'
@@ -134,6 +142,7 @@ angular.module('tcApp', ['ionic', 'google-maps'])
 			
 			}
 		});
+
 		
 		$urlRouterProvider.otherwise('/app/region');
 });

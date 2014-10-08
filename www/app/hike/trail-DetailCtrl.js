@@ -1,4 +1,6 @@
-angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateParams, hikeData){
+angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateParams, hikeData,$rootScope, $http, trailPost){
+	
+	
 	hikeData.getTrails().then(function(data){
 		$scope.trails = data;
 		
@@ -41,10 +43,38 @@ angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateP
 				 console.log('error');
 		};
 		
-		return $scope.diffVal ;
+	
+		/* $rootScope.visitedTrails.push($scope.trail);
+		console.log('visitedTrails', $rootScope.visitedTrails); */
+		
+		$rootScope.visitedTrails = trailPost.query();
+		
+		
+			
+		
+		
+		$scope.save = function(){
+		
+			var post = new trailPost($scope.trail);
+			post.$save();
+
+		}
+	
+	});
+	
+
+	
+	
+	/* $scope.checked==true;
+		console.log($scope.checked);
+		$rootScope.visitedTrails = [];
+		if($scope.checked==true){
+			console.log('checked')
+			//rootScope.visitedTrails.push($scope.trail);
+		} else {
+			$rootScope.visitedTrails.splice(0, $rootScope.visitedTrails.length);
+		} */
 		
 		
 
-		
-	});
 });

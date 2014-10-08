@@ -8,10 +8,12 @@
 				<div class='item'>
 					
 							<div class='item-checkbox'>
-								<h3>{{visited ? "walked" : "Not Walked"}}</h3>
+								<h3>{{checked ? "walked" : "Not Walked"}}</h3>
 								<label class='checkbox'>
-									<input type='checkbox' ng-model='visited'></input>
+									<input type='checkbox' ng-model='checked' ></input>
 								</label>
+								<!-- <p>{{checked}}</p> -->
+								<!-- <button ng-click='save()'> Save</button> -->
 							</div>
 
 							<!-- <div class='item'>

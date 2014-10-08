@@ -4,12 +4,33 @@ body {
 }
 
 
+.phoneFrame{
+
+	width:322px;
+	height:676px;
+/* 	background-image:url('../img/iphoneFrame.png'); */
+	z-index:5;
+	
+	left:40%;
+}
+
+ion-nav-view{
+
+	background-color:transparent;
+	width:315px;
+	height:554px;
+	position:absolute;
+	
+}
+
+
+
 .bar.bar-nynjtc, .tab-nynjtc{
 	background-color:#00b37c;
 	color:#fff;
 }
 
-.bar.bar-nynjtc h1, .button-clear.button-clear, .ion-navicon.button{
+.bar.bar-nynjtc h1, .bar.bar-nynjtc h3, .button-clear.button-clear, .ion-navicon.button{
 	color:#fff;
 
 }
@@ -53,7 +74,13 @@ i.ion-android-mail{
 	background-image:url('../img/bgImage_main.png');
 	background-repeat:no-repeat;
 	height:100%;
+	width:100%;
+	/* top:95px;
+	left:23px;
+	z-index:-1;
+	position:relative ; */
 }
+
 
 .button-block.button-outline{
 	border:none;
@@ -88,7 +115,10 @@ i.ion-android-mail{
 	padding-top:30px;
 }
 
-
+h3.underCont{
+	margin-top:200px;
+	margin-left:25px;
+}
 
 .button-outline.btn-cat{
 	border:thin solid white;
