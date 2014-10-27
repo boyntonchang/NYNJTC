@@ -6,7 +6,7 @@ body {
 
 .phoneFrame{
 
-	width:322px;
+	width:100%;
 	height:676px;
 /* 	background-image:url('../img/iphoneFrame.png'); */
 	z-index:5;
@@ -23,7 +23,18 @@ ion-nav-view{
 	
 }
 
+.button.button-block{
+	margin-right:16px;
+}
 
+.input-label{
+	color:white;
+}
+
+
+input[type='text'], input[type='password']{
+	color:white;
+}
 
 .bar.bar-nynjtc, .tab-nynjtc{
 	background-color:#00b37c;
@@ -129,6 +140,15 @@ h3.underCont{
 	text-align:left;
 }
 
+.button-outline.btn-sign{
+	border:thin solid white;
+	margin-bottom:15px;
+	padding:15px;
+	line-height:0;
+	background-color:transparent;
+	text-align:center;
+}
+
 .text-white{
 
 	color:white;
@@ -142,6 +162,7 @@ h3.underCont{
 
 .item{
 	border-color:#555;
+	background-color:transparent;
 }
 
 .card{
@@ -197,6 +218,13 @@ h3.underCont{
 	top:70%;
 	position:absolute;
 	
+}
+
+.smBtn{
+	font-size:12px;
+	min-height:20px;
+	height:30px;
+	line-height:0;
 }
 
 

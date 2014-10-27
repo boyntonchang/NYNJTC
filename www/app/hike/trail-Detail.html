@@ -5,24 +5,23 @@
 				<div class='item item-text-wrap item-divider positive contentFont'>
 					{{trail.Title}}
 				</div>
-				<div class='item'>
+				<div class='item' ng-show='auth.user'>
 					
-							<div class='item-checkbox'>
+					<button class='button button-positive smBtn' ng-click='toggleWalked(key)'>
+						{{walked ? "Walked" : "Not Walked"}}
+					</button>
+							<!-- <div class='item-checkbox'>
 								<h3>{{checked ? "walked" : "Not Walked"}}</h3>
 								<label class='checkbox'>
 									<input type='checkbox' ng-model='checked' ></input>
 								</label>
-								<!-- <p>{{checked}}</p> -->
-								<!-- <button ng-click='save()'> Save</button> -->
-							</div>
-
-							<!-- <div class='item'>
-								<input type='date'></input>
+								
 							</div> -->
 
+							
 					</div>
 				
-				</div>
+				
 					
 			
 		</div>

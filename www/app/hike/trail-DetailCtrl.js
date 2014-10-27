@@ -1,4 +1,4 @@
-angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateParams, hikeData,$rootScope, $http, trailPost){
+angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateParams, hikeData,$rootScope, $http, trailPost, $firebase){
 	
 	
 	hikeData.getTrails().then(function(data){
@@ -44,21 +44,123 @@ angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateP
 		};
 		
 	
-		/* $rootScope.visitedTrails.push($scope.trail);
-		console.log('visitedTrails', $rootScope.visitedTrails); */
 		
-		$rootScope.visitedTrails = trailPost.query();
+		
+		$scope.walked = false;
+		
+		var trailListRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
+	
+		trailListRef.on('value', function(snapshot){
+		
+					
+					var data = snapshot.val();
+					
+					$scope.visitedId = [];
+					for (var key in data) {
+						if (data.hasOwnProperty(key)) {
+							
+								data[key].key = key;
+								
+								$scope.visitedId.push(data[key].id);
+						}
+					}
+		
+					console.log($scope.visitedId);
+					
+					var visitedId = $scope.visitedId;
+					var trailId = $scope.trailId;
+					
+					var idMatch = _.indexOf(visitedId, trailId);
+					
+					console.log(idMatch);
+					
+					console.log(trailId);
+					
+					if(idMatch >-1){
+						$scope.walked = true;
+					
+					
+					} else{
+						
+						
+						$scope.walked = false;
+					}
+					
+				
+							
+	
+				
+				$rootScope.hide();
+		});
+		
+		
+	
+		
+		
+		
+
+	
+		
+		
+		
+		$scope.toggleWalked = function (key){
+		
+			var trailListRef = new Firebase($rootScope.baseUrl + escapeEmailAddress($rootScope.userEmail));
+		
+			if(!$scope.walked){
+				
+				$scope.walked = !$scope.walked;
+			
+				$rootScope.visitedTrail = $scope.trail;
+				
+				console.log('visited');
+
+				$firebase(trailListRef).$add($rootScope.visitedTrail);
+				
+				//console.log('key',key);
+				
+				//$rootScope.hide();
+				
+			} else if($scope.walked){
+				   $scope.walked = !$scope.walked;
+				   console.log('not visited');
+				   
+				   trailListRef.on('value', function(snapshot){
+						var data = snapshot.val();
+						
+						for (var key in data){
+							if(data[key].id == $scope.trailId){
+								$firebase(trailListRef).$remove(key);
+							}
+						}
+				   })
+					//$firebase(trailListRef).$remove();
+					//console.log('key',key);
+					//console.log($scope.trailId);		
+				//$rootScope.hide();
+				
+			}
+			
+			
+							
+							
+		};
+		
+		function escapeEmailAddress(email) {
+			if (!email) return false
+			// Replace '.' (not allowed in a Firebase key) with ','
+			email = email.toLowerCase();
+			email = email.replace(/\./g, ',');
+			return email.trim();
+}
+		
+		//$rootScope.visitedTrails = trailPost.query();
 		
 		
 			
 		
 		
-		$scope.save = function(){
 		
-			var post = new trailPost($scope.trail);
-			post.$save();
-
-		}
 	
 	});
 	

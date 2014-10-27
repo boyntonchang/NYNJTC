@@ -28,10 +28,10 @@
 		<ion-item nav-clear menu-close ui-sref='app.nynjtc'>
           NYNJTC
         </ion-item>
-		<ion-item nav-clear menu-close ui-sref='login' ng-hide='auth'>
+		<ion-item nav-clear menu-close ui-sref='app.login' ng-hide='auth.user'>
           LOGIN
         </ion-item>
-		<ion-item nav-clear menu-close  ng-click='logout()' ng-show='auth'>
+		<ion-item nav-clear menu-close  ng-click='logout()' ng-show='auth.user'>
           LOGOUT
         </ion-item>
       </ion-list>

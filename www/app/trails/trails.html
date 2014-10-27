@@ -1,12 +1,17 @@
-<ion-view title="Trails" ng-controller='trailsCtrl'>
+<ion-view title="My Trails" ng-controller='trailsCtrl'>
 	<ion-content class='has-header mainBgColor' >
-		<h3 class='underCont text-white'>UNDER CONTRUCTION</h3>
-		<div class='list text-white'>
+		
+		<div class='list text-white' ng-show='auth.user'>
 			
-			<a class='item mainBgColor ' ng-repeat = 'trail in visitedTrails '  ui-sref='app.trail-Detail({id:trail.id})'>
+			<a class='item mainBgColor item-icon-right' ng-repeat = 'trail in visitedTrails '  ui-sref='app.trail-Detail({id:trail.id})'>
 				{{trail.Title}}  
+				<i class='icon ion-checkmark-circled icon-accessory'></i>
 			</a>
 			
+		</div>
+		
+		<div ng-hide='auth.user' class='card text-center'>
+			<h4 >Please sign in to see your trails</h4>
 		</div>
 	</ion-content>
 </ion-view>

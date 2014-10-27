@@ -1,5 +1,5 @@
-angular.module('tcApp', ['ionic', 'google-maps','ngResource'])
-.run(function($ionicPlatform,$rootScope) {
+angular.module('tcApp', ['ionic', 'google-maps','ngResource', 'firebase'])
+.run(function($ionicPlatform, $rootScope, $firebaseAuth, $firebase, $window, $ionicLoading, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -10,6 +10,61 @@ angular.module('tcApp', ['ionic', 'google-maps','ngResource'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+	
+	
+        $rootScope.userEmail = null;
+        $rootScope.baseUrl = 'https://radiant-heat-2978.firebaseio.com/';
+        var authRef = new Firebase($rootScope.baseUrl);
+        $rootScope.auth = $firebaseAuth(authRef);
+
+        $rootScope.show = function(text) {
+            $rootScope.loading = $ionicLoading.show({
+                content: text ? text : 'Loading..',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+        };
+
+        $rootScope.hide = function() {
+            $ionicLoading.hide();
+        };
+
+        $rootScope.notify = function(text) {
+            $rootScope.show(text);
+            $window.setTimeout(function() {
+                $rootScope.hide();
+            }, 1999);
+        };
+
+        $rootScope.logout = function() {
+            $rootScope.auth.$logout();
+            $rootScope.checkSession();
+			$rootScope.visitedTrails = "";
+			console.log('log out', $rootScope.visitedTrails);
+        };
+
+        $rootScope.checkSession = function() {
+            var auth = new FirebaseSimpleLogin(authRef, function(error, user) {
+                if (error) {
+                    // no action yet.. redirect to default route
+                    $rootScope.userEmail = null;
+					console.log('default');
+                  // $window.location.href = '#/login';
+                } else if (user) {
+                    // user authenticated with Firebase
+                    $rootScope.userEmail = user.email;
+                     $window.location.href = '#/home';
+					 console.log(user.email);
+                } else {
+                    // user is logged out
+                    $rootScope.userEmail = null;
+                     $window.location.href = '#/app/login';
+					 console.log('log out');
+                }
+            });
+        }
 	   $rootScope.$on('$stateChangeError', function(event, toState, toParams, 
                                                  fromState, fromParams, error) {
       $state.go(error);
@@ -120,6 +175,24 @@ angular.module('tcApp', ['ionic', 'google-maps','ngResource'])
 			views:{
 			'mainContent':{
 				templateUrl:'app/nynjtc/nynjtc.html'
+				}
+			
+			}
+		})
+		.state('app.login', {
+			url:'/login',
+			views:{
+			'mainContent':{
+				templateUrl:'app/account/login.html'
+				}
+			
+			}
+		})
+		.state('app.signup', {
+			url:'/signup',
+			views:{
+			'mainContent':{
+				templateUrl:'app/account/signup.html'
 				}
 			
 			}

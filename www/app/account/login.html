@@ -1,6 +1,27 @@
 <ion-view title='Login' ng-controller='LoginCtrl'>
-	<ion-content>
-	
+	<ion-content class='has-header  mainBgColor'>
+		<div class="list">
+		  <label class="item item-input">
+			<span class="input-label">Email</span>
+			<input type="text" ng-model="user.email">
+		  </label>
+		  <label class="item item-input">
+			<span class="input-label">Password</span>
+			<input type="password" ng-model="user.password">
+		  </label>
+		  <label class="item item-input">
+			<button class="button button-block button-outline btn-sign" ng-click="validateUser()">
+		  Sign In
+			</button>
+		  </label>
+		  <label class="item item-input">
+			<button class="button button-block button-outline btn-sign" ui-sref='app.signup'>
+		  Sign Up
+			</button>
+		  </label>
+		</div>
+    <!-- Logged-in user text -->
+		
 	</ion-content>
 </ion-view>
 

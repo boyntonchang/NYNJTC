@@ -1,0 +1,21 @@
+	
+<ion-view title='Sign Up' ng-controller='signUpCtrl'>	
+	<ion-content class="has-header padding mainBgColor">
+		<div class="list">
+			
+			<label class="item item-input">
+				<span class="input-label">Email</span>
+				<input type="text" ng-model="user.email">
+			</label>
+			<label class="item item-input">
+				<span class="input-label">Password</span>
+				<input type="password" ng-model="user.password">
+			</label>
+			<label class="item item-input">
+				<button class="button button-block button-outline btn-sign" ng-click="createUser()">
+					Sign Up
+				</button>
+			</label>
+		</div>
+	</ion-content>
+</ion-view>
