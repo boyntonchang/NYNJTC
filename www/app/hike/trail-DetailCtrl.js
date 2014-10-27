@@ -119,7 +119,7 @@ angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateP
 				
 				//console.log('key',key);
 				
-				//$rootScope.hide();
+				$rootScope.hide();
 				
 			} else if($scope.walked){
 				   $scope.walked = !$scope.walked;
@@ -137,7 +137,7 @@ angular.module('tcApp').controller('trail-DetailCtrl', function ($scope, $stateP
 					//$firebase(trailListRef).$remove();
 					//console.log('key',key);
 					//console.log($scope.trailId);		
-				//$rootScope.hide();
+				$rootScope.hide();
 				
 			}
 			

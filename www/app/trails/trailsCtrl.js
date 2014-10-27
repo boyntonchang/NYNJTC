@@ -1,6 +1,6 @@
 angular.module('tcApp').controller('trailsCtrl', function($scope, $rootScope,$firebase,$ionicModal){
 	
-	//$rootScope.show("Please wait... Processing");
+	$rootScope.show("Please wait... Processing");
 	
 	$rootScope.visitedTrails =[];
 	

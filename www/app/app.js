@@ -42,7 +42,7 @@ angular.module('tcApp', ['ionic', 'google-maps','ngResource', 'firebase'])
             $rootScope.auth.$logout();
             $rootScope.checkSession();
 			$rootScope.visitedTrails = "";
-			console.log('log out', $rootScope.visitedTrails);
+			//console.log('log out', $rootScope.visitedTrails);
         };
 
         $rootScope.checkSession = function() {

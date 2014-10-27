@@ -1,6 +1,9 @@
 angular.module('tcApp').controller('signUpCtrl', [
     '$scope', '$rootScope', '$firebaseAuth', '$window', '$state',
     function($scope, $rootScope, $firebaseAuth, $window, $state) {
+	
+	
+	
 
         $scope.user = {
             email: "",
