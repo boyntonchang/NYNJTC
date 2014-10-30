@@ -1,5 +1,5 @@
-angular.module('tcApp', ['ionic', 'google-maps','ngResource', 'firebase'])
-.run(function($ionicPlatform, $rootScope, $firebaseAuth, $firebase, $window, $ionicLoading, $state) {
+angular.module('tcApp', ['ionic', 'google-maps','ngResource', 'firebase', 'angular-data.DSCacheFactory'])
+.run(function($ionicPlatform, DSCacheFactory,$rootScope, $firebaseAuth, $firebase, $window, $ionicLoading, $state) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -65,10 +65,12 @@ angular.module('tcApp', ['ionic', 'google-maps','ngResource', 'firebase'])
                 }
             });
         }
-	   $rootScope.$on('$stateChangeError', function(event, toState, toParams, 
+	/*    $rootScope.$on('$stateChangeError', function(event, toState, toParams, 
                                                  fromState, fromParams, error) {
       $state.go(error);
-    });
+    }); */
+	DSCacheFactory('trailCache', {storageMode:'localStorage', maxAge:3600000, deleteOnExpire:'aggressive'});
+	
   });
 })
 
