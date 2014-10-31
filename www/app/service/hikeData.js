@@ -4,7 +4,7 @@ angular.module('tcApp').factory('hikeData', function($http, $q, $ionicLoading, D
 		
 		getTrails:function(){
 			var deferred = $q.defer(),
-					cacheKey = "trails",
+					cacheKey = "trail",
 					trailCache =DSCacheFactory.get("trailCache"),
 					trailData = trailCache.get(cacheKey);		
 			if(trailData){

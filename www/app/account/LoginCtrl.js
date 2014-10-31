@@ -1,6 +1,6 @@
 angular.module('tcApp').controller('LoginCtrl', [
-        '$scope', '$rootScope', '$firebaseAuth', '$window',
-        function($scope, $rootScope, $firebaseAuth, $window) {
+        '$scope', '$rootScope', '$firebaseAuth', '$window', '$ionicLoading',
+        function($scope, $rootScope, $firebaseAuth, $window, $ionicLoading) {
             // check session
             $rootScope.checkSession();
 
@@ -10,10 +10,12 @@ angular.module('tcApp').controller('LoginCtrl', [
             };
             $scope.validateUser = function() {
                 $rootScope.show('Please wait.. Authenticating');
+				$ionicLoading.show({template:'Please wait.. Authenticating'});
                 var email = this.user.email;
                 var password = this.user.password;
                 if (!email || !password) {
                     $rootScope.notify("Please enter valid credentials");
+					$ionicLoading.show({template:'Please enter valid credentials'});
                     return false;
                 }
 
@@ -27,13 +29,19 @@ angular.module('tcApp').controller('LoginCtrl', [
                 }, function(error) {
                     $rootScope.hide();
                     if (error.code == 'INVALID_EMAIL') {
+						$ionicLoading.show({template:'Invalid Email Address'});
                         $rootScope.notify('Invalid Email Address');
+						//alert('email');
                     } else if (error.code == 'INVALID_PASSWORD') {
-                        $rootScope.notify('Invalid Password');
+						$ionicLoading.show({template:'Invalid Password'});
+                       $rootScope.notify('Invalid Password');
+						//alert('password');
                     } else if (error.code == 'INVALID_USER') {
-                        $rootScope.notify('Invalid User');
+						$ionicLoading.show({template:'Invalid User'});
+						$rootScope.notify('Invalid User');
                     } else {
-                        $rootScope.notify('Oops something went wrong. Please try again later');
+						$ionicLoading.show({template:'Oops something went wrong. Please try again later'});
+                       $rootScope.notify('Oops something went wrong. Please try again later');
                     }
                 });
             }

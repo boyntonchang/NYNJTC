@@ -1,4 +1,4 @@
-angular.module('tcApp').controller('locationMapCtrl', function($scope, $stateParams, hikeData){
+angular.module('tcApp').controller('locationMapCtrl', function($scope, $stateParams, hikeDataMarker){
 
 	
 	
@@ -14,7 +14,7 @@ angular.module('tcApp').controller('locationMapCtrl', function($scope, $statePar
 	
 	$scope.marker = {};
 	
-	hikeData.getTrails().then(function(data){
+	hikeDataMarker.getMarker().then(function(data){
 	
 		$scope.trails = data;
 		

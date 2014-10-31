@@ -3,8 +3,9 @@
 	
 		<div class='list text-white'>
 			
-			<a class='item mainBgColor ' ng-repeat = 'trail in selectedTrails '  ui-sref='app.trail-Detail({id:trail.id})'>
-				{{trail.Title}}  
+			<a class='item mainBgColor  item-icon-right' ng-repeat = 'trail in selectedTrails '  ui-sref='app.trail-Detail({id:trail.id})'>
+				{{trail.Title}} 
+				<i class='icon ion-chevron-right icon-accessory'></i>				
 			</a>
 			
 		</div>
