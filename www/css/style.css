@@ -36,6 +36,10 @@ input[type='text'], input[type='password']{
 	color:white;
 }
 
+.positive input[type='text']{
+	color:#076293;
+}
+
 .bar.bar-nynjtc, .tab-nynjtc{
 	background-color:#00b37c;
 	color:#fff;
